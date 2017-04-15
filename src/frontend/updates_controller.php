@@ -24,7 +24,7 @@ class UpdatesController extends JControllerLegacy {
 
 		foreach ($items as $item) {
 			$update = new stdClass;
-			$update->ID = $item->update_id;
+			$update->ID = intval($item->update_id);
 			$update->Title = $item->name; // TODO or title?
 			$update->Description = $item->description;
 			$update->Version = $item->version;
