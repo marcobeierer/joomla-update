@@ -12,4 +12,34 @@ class UpdatesController extends JControllerLegacy {
 
 	function __destruct() {
 	}
+
+	function getUpdates() {
+		JModelLegacy::addIncludePath(JPATH_SITE . '/administrator/components/com_installer/models', 'InstallerModel');
+		$model = JModelLegacy::getInstance('Update', 'InstallerModel');
+
+		$model->findUpdates();
+		$items = $model->getItems();
+
+		$updates = array();
+
+		foreach ($items as $item) {
+			$update = new stdClass;
+			$update->id = $item->update_id;
+			$update->title = $item->name; // TODO or title?
+			$update->description = $item->description;
+			$update->version = $item->version;
+			$update->url = $item->infourl;
+
+			$updates[] = $update;
+		}
+
+		$jsonData = json_encode($updates); // TODO check for errors
+		if ($jsonData === false) {
+			JLog::add('could not encode as json: ' . $updates, JLog::ERROR, 'com_backup');
+			throw new Exception(JText::_('COM_BACKUP_INTERNAL_SERVER_ERROR'), 500);
+		}
+
+		echo $jsonData;
+		exit;
+	}
 }
