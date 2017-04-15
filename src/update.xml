@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.5" method="upgrade">
+	<name>com_update</name>
+	<creationDate>April 2017</creationDate>
+	<author>Marco Beierer</author>
+	<authorEmail>email@marcobeierer.com</authorEmail>
+	<authorUrl>https://www.marcobeierer.com</authorUrl>
+	<copyright>Copyright (c) 2017 Marco Beierer</copyright>
+	<license>GNU GPL v3 or later</license>
+	<version>1.0.0-beta.1</version>
+	<description>Update component for Joomla.</description>
+
+	<administration>
+		<menu>update</menu>
+		<files folder="backend">
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>update.php</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+		</files>
+
+		<languages folder="language/backend">
+			<language tag="en-GB">en-GB/en-GB.com_update.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_update.sys.ini</language>
+		</languages>
+	</administration>
+
+	<files folder="frontend">
+		<folder>libs</folder>
+		<filename>update.php</filename>
+		<filename>controller.php</filename>
+		<filename>lock_controller.php</filename>
+		<filename>logs_controller.php</filename>
+		<filename>router.php</filename>
+	</files>
+
+	<languages folder="language/frontend">
+		<language tag="en-GB">en-GB/en-GB.com_update.ini</language>
+	</languages>
+
+	<media folder="media" destination="com_update">
+		<folder>updates</folder>
+		<file>index.html</file>
+	</media>
+
+	<updateservers>
+		<server type="extension" name="Update Update Site">https://static.marcobeierer.com/joomla-extensions/update/update.xml</server>
+	</updateservers>
+</extension>
