@@ -27,10 +27,8 @@
 	</administration>
 
 	<files folder="frontend">
-		<folder>libs</folder>
 		<filename>update.php</filename>
 		<filename>controller.php</filename>
-		<filename>lock_controller.php</filename>
 		<filename>logs_controller.php</filename>
 		<filename>router.php</filename>
 	</files>
@@ -40,7 +38,6 @@
 	</languages>
 
 	<media folder="media" destination="com_update">
-		<folder>updates</folder>
 		<file>index.html</file>
 	</media>
 
