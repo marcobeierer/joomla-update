@@ -7,7 +7,7 @@
 	<authorUrl>https://www.marcobeierer.com</authorUrl>
 	<copyright>Copyright (c) 2017 Marco Beierer</copyright>
 	<license>GNU GPL v3 or later</license>
-	<version>1.0.0-beta.1</version>
+	<version>1.0.0-beta.2</version>
 	<description>Update component for Joomla.</description>
 
 	<administration>
@@ -28,7 +28,7 @@
 
 	<files folder="frontend">
 		<filename>update.php</filename>
-		<filename>controller.php</filename>
+		<filename>updates_controller.php</filename>
 		<filename>logs_controller.php</filename>
 		<filename>router.php</filename>
 	</files>
